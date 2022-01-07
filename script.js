@@ -1,5 +1,4 @@
-console.log('about to fetch a rainbow');
-
+// First task
 // getCurrentInfo().then(response => {
 //     console.log('yay');
 // }).catch(error => {
@@ -18,6 +17,7 @@ console.log('about to fetch a rainbow');
 //     document.getElementById('current').src = dataObject.url;
 // }
 
+// Third task
 getMultipleInfo().then(response => {
     console.log('yay');
 }).catch(error => {
@@ -26,7 +26,7 @@ getMultipleInfo().then(response => {
 });
   
 async function getMultipleInfo() {
-    const response = await fetch('https://api.nasa.gov/planetary/apod?api_key=8XXbGX2Tu4dXShKenTphOV2V5J05n89FVrFAvRkR&start_date=2017-07-08&end_date=2017-07-10');
+    const response = await fetch('https://api.nasa.gov/planetary/apod?api_key=8XXbGX2Tu4dXShKenTphOV2V5J05n89FVrFAvRkR&start_date=2017-07-08&end_date=2018-07-10');
     const datas = await response.text();
     console.log(datas);
     const ul = document.getElementById('multiple');
