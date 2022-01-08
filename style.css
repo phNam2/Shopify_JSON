@@ -1,0 +1,45 @@
+#current_info{
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+
+    position: absolute;
+    background: rgb(179, 175, 175); 
+    font-size: 20px; 
+    padding: 10px; 
+    border: 7px solid lightgray; 
+    margin: 10px;
+}
+
+#current_image{
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#current_title{
+    text-align: center;
+    font-size: 150%;
+}
+
+#current_description{
+    text-align: justify;
+}
+
+#current_date, #current_description, #current_author{
+    font-size: 80%;
+}
+
+.fa{
+    margin: 10px;
+}
+
+.thumbs_up{
+    color: rgb(0, 110, 255);
+}
+
+.thumbs_down{
+    color: red;
+}
