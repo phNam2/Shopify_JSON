@@ -16,7 +16,12 @@ async function getCurrentInfo() {
 
     document.getElementById('current_title').innerHTML = dataObject.title;
     document.getElementById('current_date').innerHTML = dataObject.date;
-    document.getElementById('current_author').innerHTML = dataObject.copyright;
+    if (dataObject.copyright == null) {
+        document.getElementById('current_author').innerHTML = "Anonymous";
+    } else {
+        document.getElementById('current_author').innerHTML = dataObject.copyright;
+    }
+    // document.getElementById('current_author').innerHTML = dataObject.copyright;
     document.getElementById('current_image').src = dataObject.url;
     document.getElementById('current_description').innerHTML = dataObject.explanation;
 }
