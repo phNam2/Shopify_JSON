@@ -9,7 +9,7 @@ main{
     grid-template-columns: 25% 50% 25%;
     grid-template-areas:"box1 box1 box1"
                         "box2 box3 box4"
-                        "box5 box5 box5";
+                        "box5 box5 box6";
 }
 
 .box1{
@@ -99,12 +99,14 @@ main{
     padding: 16px 32px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
-    font-size: 80%;
+    /* display: inline-block; */
+    font-size: 100%;
     margin: 4px 2px;
     transition-duration: 0.4s;
     cursor: pointer;
     border-radius: 20px;
+
+    float: right;
 }
 
 #next_page:hover {
