@@ -7,7 +7,7 @@ getCurrentInfo().then(response => {
 });
   
 async function getCurrentInfo() {
-    const response = await fetch('https://api.nasa.gov/planetary/apod?api_key=8XXbGX2Tu4dXShKenTphOV2V5J05n89FVrFAvRkR');
+    const response = await fetch('https://api.nasa.gov/planetary/apod?api_key=DLM2BzUBSBJylwzHIrmD2zugoFaHcQAPdymRrakb');
     const datas = await response.text();
     console.log(datas);
 
@@ -23,7 +23,15 @@ async function getCurrentInfo() {
     }
 
     document.getElementById('current_image').src = dataObject.url;
-    document.getElementById("current_image").addEventListener("error", toVideo(dataObject));
+    urlArray = dataObject.url.split("/");
+    for (i = 0; i < urlArray.length; i++){
+        if (urlArray[i] == "www.youtube.com") {
+            toVideo(dataObject);
+            stop;
+        }
+    } 
+
+    // document.getElementById("current_image").addEventListener("error", toVideo(dataObject));
 
     document.getElementById('current_description').innerHTML = dataObject.explanation;
 }
@@ -70,7 +78,7 @@ function search() {
 
   
 async function getMultipleInfo() {
-    const response = await fetch('https://api.nasa.gov/planetary/apod?api_key=8XXbGX2Tu4dXShKenTphOV2V5J05n89FVrFAvRkR&start_date=2017-07-08&end_date=2017-07-10');
+    const response = await fetch('https://api.nasa.gov/planetary/apod?api_key=DLM2BzUBSBJylwzHIrmD2zugoFaHcQAPdymRrakb&start_date=2017-07-08&end_date=2017-07-10');
     const datas = await response.text();
     console.log(datas);
     const ul = document.getElementById('multiple');
