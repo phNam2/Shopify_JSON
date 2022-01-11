@@ -34,6 +34,10 @@ main{
     grid-area: box5;
 }
 
+.box6{
+    grid-area: box6;
+}
+
 #introduction{
     width: 25%;
     background-color: rgb(223, 195, 39);
@@ -118,4 +122,31 @@ main{
 #next_page:hover {
     background-color: rgb(177, 150, 0);
     color: white;
+}
+
+
+
+/* Search html layout */
+#main2{
+    height: 100%;
+    display: grid;
+    grid-template-rows: 20% 80%;
+    grid-template-columns: 45% 10% 45%;
+    grid-template-areas:"box7 . box8"
+                        "box9 box9 box9";
+}
+
+.box7{
+    background-image: url(./date.jfif);
+    grid-area: box7;
+}
+
+.box8{
+    background-image: url(./range.jfif);
+    grid-area: box8;
+}
+
+.box9{
+    /* background-color: red; */
+    grid-area: box9;
 }
