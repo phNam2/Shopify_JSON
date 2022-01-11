@@ -21,9 +21,17 @@ async function getCurrentInfo() {
     } else {
         document.getElementById('current_author').innerHTML = dataObject.copyright;
     }
-    // document.getElementById('current_author').innerHTML = dataObject.copyright;
+
     document.getElementById('current_image').src = dataObject.url;
+    document.getElementById("current_image").addEventListener("error", toVideo(dataObject));
+
     document.getElementById('current_description').innerHTML = dataObject.explanation;
+}
+
+function toVideo(dataObject) {
+    document.getElementById("current_image").style = "display: none;";
+    document.getElementById("current_video").style = "display: block;";
+    document.getElementById('current_video').src = dataObject.url;
 }
 
 
