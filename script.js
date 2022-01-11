@@ -28,6 +28,7 @@ async function getCurrentInfo() {
     document.getElementById('current_description').innerHTML = dataObject.explanation;
 }
 
+// Add video link instead of an image
 function toVideo(dataObject) {
     document.getElementById("current_image").style = "display: none;";
     document.getElementById("current_video").style = "display: block;";
