@@ -1,7 +1,7 @@
 // First task
 getCurrentInfo().then(response => {
     console.log('yay');
-    document.getElementById("loader").style = "display:none";
+    document.getElementById("current_loader").style = "display:none";
     document.getElementById("info").style = "display: block";
 }).catch(error => {
     console.log('error!');
@@ -52,9 +52,9 @@ function like(x) {
         x.classList.remove("thumbs_up");
     } else {
         x.classList.add("thumbs_up");
-        document.getElementById('current_dislike').classList.remove("thumbs_down");
+        tagging = splitLikeDislikeButton(x.id);
+        document.getElementById(tagging+'_dislike').classList.remove("thumbs_down");
     }
-   
 }
 
 function dislike(x) {
@@ -63,24 +63,65 @@ function dislike(x) {
         x.classList.remove("thumbs_down");
     } else {
         x.classList.add("thumbs_down");
-        document.getElementById('current_like').classList.remove("thumbs_up");
+        tagging = splitLikeDislikeButton(x.id);
+        document.getElementById(tagging+'_like').classList.remove("thumbs_up");
     }
    
 }
 
+function splitLikeDislikeButton(id){
+    tagging = id.split("_");
+    return tagging[0];
+}
+
 // Third task
-function search() {
-    getMultipleInfo().then(response => {
+function search1() {
+    const day = document.getElementById("specific").value;
+    document.getElementById("specific_infos").style = "display: block";
+    getSpecificInfo(day).then(response => {
         console.log('yay');
+        
+        document.getElementById("specific_loader").style = "display:none";
+        document.getElementById("specific_info").style = "display: block";
     }).catch(error => {
     console.log('error!');
     console.error(error);
     });
 }
 
+async function getSpecificInfo(day) {
+    const response = await fetch('https://api.nasa.gov/planetary/apod?api_key=DLM2BzUBSBJylwzHIrmD2zugoFaHcQAPdymRrakb&date='+day);
+    const datas = await response.text();
+    console.log(datas);
+
+    const dataObject = JSON.parse(datas);
+    console.log(dataObject);
+
+    document.getElementById('specific_title').innerHTML = dataObject.title;
+    document.getElementById('specific_date').innerHTML = dataObject.date;
+    if (dataObject.copyright == null) {
+        document.getElementById('specific_author').innerHTML = "Anonymous";
+    } else {
+        document.getElementById('specific_author').innerHTML = dataObject.copyright;
+    }
+
+    document.getElementById('specific_image').src = dataObject.url;
+    urlArray = dataObject.url.split("/");
+    for (i = 0; i < urlArray.length; i++){
+        if (urlArray[i] == "www.youtube.com") {
+            toVideo(dataObject);
+            stop;
+        }
+    } 
+
+    // document.getElementById("current_image").addEventListener("error", toVideo(dataObject));
+
+    document.getElementById('specific_description').innerHTML = dataObject.explanation;
+}
+
   
 async function getMultipleInfo() {
-    const response = await fetch('https://api.nasa.gov/planetary/apod?api_key=DLM2BzUBSBJylwzHIrmD2zugoFaHcQAPdymRrakb&start_date=2017-07-08&end_date=2017-07-10');
+    const response = await fetch('https://api.nasa.gov/planetary/apod?api_key=DLM2BzUBSBJylwzHIrmD2zugoFaHcQAPdymRrakb&date=2017-07-08&end_date=2017-07-10');
     const datas = await response.text();
     console.log(datas);
     const ul = document.getElementById('multiple');
@@ -105,4 +146,10 @@ async function getMultipleInfo() {
     }
 
     ul.appendChild(list);
+}
+
+function test(){
+    // var today = new Date();
+    // console.log(today);
+    console.log(document.getElementById("specific").value);
 }
