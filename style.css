@@ -147,23 +147,49 @@ main{
 #main2{
     height: 100%;
     display: grid;
-    grid-template-rows: 20% 80%;
+    grid-template-rows: 10% 20% 70%;
     grid-template-columns: 45% 10% 45%;
-    grid-template-areas:"box7 . box8"
-                        "box9 box9 box9";
+    grid-template-areas:"box7 box7 box7"
+                        "box8 . box9"
+                        "box10 box10 box10";
 }
 
 .box7{
-    background-image: url(./date.jfif);
+    color: white;
+    text-align: center;
     grid-area: box7;
 }
 
 .box8{
-    background-image: url(./range.jfif);
+    /* margin: 10px; */
     grid-area: box8;
 }
 
 .box9{
-    /* background-color: red; */
+    /* margin: 10px; */
     grid-area: box9;
+}
+
+.box10{
+    /* background-color: red; */
+    grid-area: box10;
+}
+
+.dateBox{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border-radius: 30px;
+}
+
+#exact_date{
+    background-color: black;
+    color: white;
+    border: 5px solid;
+}
+
+#range_date{
+    background-color: white;
+    border: 5px solid rgb(109, 106, 106);
 }
