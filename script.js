@@ -1,6 +1,8 @@
 // First task
 getCurrentInfo().then(response => {
     console.log('yay');
+    document.getElementById("loader").style = "display:none";
+    document.getElementById("info").style = "display: block";
 }).catch(error => {
     console.log('error!');
     console.error(error);

@@ -16,19 +16,22 @@
         <div class="box2"></div>
         <div class="box3">
             <div id = "current_info">
-                <h1 id="current_title"></h1>
-                <p id="current_date"></p>
-                <p id="current_author"></p>
+                <div id="loader"></div>
+                <div id="info" style="display:none">
+                    <h1 id="current_title"></h1>
+                    <p id="current_date"></p>
+                    <p id="current_author"></p>
 
-                <img src="" id="current_image">
-                <iframe src="" id="current_video" style="display: none;"></iframe>
+                    <img src="" id="current_image">
+                    <iframe src="" id="current_video" style="display: none;"></iframe>
 
-                <p id="current_description"></p>
+                    <p id="current_description"></p>
         
-                <div id="buttons">
-                    <i onclick="like(this)" id="current_like" class="fa fa-thumbs-up" style="margin-right: 20pt;"></i>
+                    <div id="buttons">
+                        <i onclick="like(this)" id="current_like" class="fa fa-thumbs-up" style="margin-right: 20pt;"></i>
                     
-                    <i onclick="dislike(this)" id="current_dislike" class="fa fa-thumbs-down"></i>
+                        <i onclick="dislike(this)" id="current_dislike" class="fa fa-thumbs-down"></i>
+                    </div>
                 </div>
             </div>
         </div>
