@@ -14,6 +14,12 @@
         <div class="box8">
             <div id="exact_date" class="dateBox">
                 <h2 style="font-size: 3vh;">Choose a specific date</h2>
+                <label>Enter:</label>
+                <input type="date" id="specific">
+
+                <button onclick="search1()">
+                    <span class="text"> Submit</span>
+                </button>
             </div>
         </div>
         <div class="box9">
@@ -22,17 +28,32 @@
             </div>
         </div>
         <div class="box10">
+            <div id="specific_infos" class="infos" style="display:none">
+                <div id="specific_loader" class="loader"></div>
+                <div id="specific_info" style="display:none">
+                    <h1 id="specific_title" class="title"></h1>
+                    <p id="specific_date" class="date"></p>
+                    <p id="specific_author" class="author"></p>
 
+                    <img src="" id="specific_image" class="image">
+                    <iframe src="" id="specific_video" class="video" style="display: none;"></iframe>
+
+                    <p id="specific_description" class="description"></p>
+        
+                    <div id="specific_buttons" class="button">
+                        <i onclick="like(this)" id="specific_like" class="fa fa-thumbs-up" style="margin-right: 20pt;"></i>
+                    
+                        <i onclick="dislike(this)" id="specific_dislike" class="fa fa-thumbs-down"></i>
+                    </div>
+                </div>
+            </div>
+            <div id="multiple" style="display:none">
+                <ul id="multiple"></ul>
+            </div>
+            
         </div>
     </main>
 
-    <!-- <button onclick="search()">
-        <span class="text"> Click me</span>
-    </button>
-
-
-    <ul id="multiple"></ul> -->
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js" integrity="sha512-fzff82+8pzHnwA1mQ0dzz9/E0B+ZRizq08yZfya66INZBz86qKTCt9MLU0NCNIgaMJCgeyhujhasnFUsYMsi0Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./script.js"></script>
 </body>
