@@ -177,6 +177,7 @@ async function getMultipleInfo(start, end) {
     if (dataObject.code == 400) {
         x=document.getElementById("error2");
         x.style = "display:block";
+        x.innerHTML = dataObject.msg;
     }
 
     for (let i = 0; i < dataObject.length; i++) {

@@ -15,7 +15,7 @@
             <div id="exact_date" class="dateBox">
                 <h2 style="font-size: 3vh;">Choose a specific date</h2>
                 <label>Enter:</label>
-                <input type="date" id="specific" min="1995-06-20">
+                <input type="date" id="specific" min="1995-06-16">
 
                 <button onclick="search1()">
                     <span class="text"> Submit</span>
@@ -26,9 +26,9 @@
             <div id="range_date" class="dateBox">
                 <h2 style="font-size: 3vh;">Choose a date range</h2>
                 <label>From:</label>
-                <input type="date" id="start" min="1995-06-20">
+                <input type="date" id="start" min="1995-06-16">
                 <label>To:</label>
-                <input type="date" id="end" min="1995-06-20">
+                <input type="date" id="end" min="1995-06-16">
 
                 <button onclick="search2()">
                     <span class="text"> Submit</span>
@@ -58,7 +58,7 @@
                         </div>
                     </div>
                     <div style="text-align: center;">
-                        <h1 id="error" style="display: none; font-size: 4vh">Archive only from June 20th 1995 to today</h1>
+                        <h1 id="error" style="display: none; font-size: 4vh">Archive only available from June 16th, 1995 to today</h1>
                     </div>
                 </div>
             </div>
@@ -67,7 +67,7 @@
                 <div id="multiple">
                     <div id="multiple_loader" class="loader" style="display:none"></div>
                     <div id="multiple_list"></div>
-                    <h1 id="error2" style="display: none; font-size: 4vh;  text-transform: uppercase">Start date cannot be after End date</h1>
+                    <h1 id="error2" style="display: none; font-size: 4vh;  text-transform: uppercase"></h1>
                 </div>
             </div>
         </div>
