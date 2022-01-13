@@ -25,10 +25,20 @@
         <div class="box9">
             <div id="range_date" class="dateBox">
                 <h2 style="font-size: 3vh;">Choose a date range</h2>
+                <label>From:</label>
+                <input type="date" id="start" min="1995-06-20">
+                <label>To:</label>
+                <input type="date" id="end" min="1995-06-20">
+
+                <button onclick="search2()">
+                    <span class="text"> Submit</span>
+                </button>
             </div>
         </div>
         <div class="box11">
-            <h1>ooooo</h1>
+            <div id="multiple" style="display:none">
+                <ul id="multiple"></ul>
+            </div>
         </div>
         <div class="box10">
             <div id="specific_infos" class="infos" style="display:none">
@@ -53,10 +63,6 @@
                     <h1 id="error" style="display: none; font-size: 4vh">Archive only from June 20th 1995 to today</h1>
                 </div>
             </div>
-            <div id="multiple" style="display:none">
-                <ul id="multiple"></ul>
-            </div>
-            
         </div>
     </main>
 
