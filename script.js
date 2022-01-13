@@ -135,14 +135,18 @@ async function getSpecificInfo(day) {
 }
 
 function search2(){
+    deleteList();
+
     const start_date = document.getElementById("start").value;
     const end_date = document.getElementById("end").value;
     getMultipleInfo(start_date, end_date).then(response => {
         console.log('yay');
-        
+        document.getElementById("start").value = null;
+        document.getElementById("end").value = null;
         
     }).catch(error => {
-        
+        document.getElementById("start").value = null;
+        document.getElementById("end").value = null;
         console.log('error!');
     });
 }
@@ -176,6 +180,14 @@ function test(){
     // var today = new Date();
     // console.log(today);
     console.log(document.getElementById("specific").value);
+}
+
+// Delete the elements of the ul elemennts
+function deleteList() {
+    var listElements = document.getElementById("multiple_list");   // Get the <ul> element with id="myList"
+    while (listElements.firstChild) {
+        listElements.removeChild(listElements.lastChild);
+    }
 }
 
 
