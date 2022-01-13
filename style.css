@@ -152,8 +152,7 @@ main{
     grid-template-columns: 45% 10% 45%;
     grid-template-areas:"box7 box7 box7"
                         "box8 . box9"
-                        "box10 box10 box10"
-                        "box11 box11 box11";
+                        "box12 box12 box12";
 }
 
 .box7{
@@ -179,6 +178,12 @@ main{
 
 .box11{
     grid-area: box11;
+}
+
+.box12{
+    grid-area: box12;
+    display: flex;
+    flex-direction: column;
 }
 
 .dateBox{

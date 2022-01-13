@@ -36,39 +36,41 @@
             </div>
         </div>
 
-        <!-- Multiple results display -->
-        <div class="box11">
-            <div id="multiple">
-                <div id="multiple_loader" class="loader" style="display:none"></div>
-                <div id="multiple_list"></div>
-            </div>
-        </div>
+        <div class="box12">
+            <!-- A detail result display -->
+            <div class="box10">
+                <div id="specific_infos" class="infos" style="display:none">
+                    <div id="specific_loader" class="loader"></div>
+                    <div id="specific_info" style="display:none">
+                        <h1 id="specific_title" class="title"></h1>
+                        <p id="specific_date" class="date"></p>
+                        <p id="specific_author" class="author"></p>
 
-        <!-- A detail result display -->
-        <div class="box10">
-            <div id="specific_infos" class="infos" style="display:none">
-                <div id="specific_loader" class="loader"></div>
-                <div id="specific_info" style="display:none">
-                    <h1 id="specific_title" class="title"></h1>
-                    <p id="specific_date" class="date"></p>
-                    <p id="specific_author" class="author"></p>
+                        <img src="" id="specific_image" class="image">
+                        <iframe src="" id="specific_video" class="video" style="display: none;"></iframe>
 
-                    <img src="" id="specific_image" class="image">
-                    <iframe src="" id="specific_video" class="video" style="display: none;"></iframe>
-
-                    <p id="specific_description" class="description"></p>
-        
-                    <div id="specific_buttons" class="button">
-                        <i onclick="like(this)" id="specific_like" class="fa fa-thumbs-up" style="margin-right: 20pt;"></i>
-                    
-                        <i onclick="dislike(this)" id="specific_dislike" class="fa fa-thumbs-down"></i>
+                        <p id="specific_description" class="description"></p>
+            
+                        <div id="specific_buttons" class="button">
+                            <i onclick="like(this)" id="specific_like" class="fa fa-thumbs-up" style="margin-right: 20pt;"></i>
+                        
+                            <i onclick="dislike(this)" id="specific_dislike" class="fa fa-thumbs-down"></i>
+                        </div>
+                    </div>
+                    <div style="text-align: center;">
+                        <h1 id="error" style="display: none; font-size: 4vh">Archive only from June 20th 1995 to today</h1>
                     </div>
                 </div>
-                <div style="text-align: center;">
-                    <h1 id="error" style="display: none; font-size: 4vh">Archive only from June 20th 1995 to today</h1>
+            </div>
+            <!-- Multiple results display -->
+            <div class="box11">
+                <div id="multiple">
+                    <div id="multiple_loader" class="loader" style="display:none"></div>
+                    <div id="multiple_list"></div>
                 </div>
             </div>
         </div>
+        
     </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js" integrity="sha512-fzff82+8pzHnwA1mQ0dzz9/E0B+ZRizq08yZfya66INZBz86qKTCt9MLU0NCNIgaMJCgeyhujhasnFUsYMsi0Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
