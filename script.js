@@ -146,12 +146,15 @@ function search2(){
         console.log('yay');
         document.getElementById("start").value = null;
         document.getElementById("end").value = null;
-        document.getElementById("multiple_loader").style = "display:none";
+        document.getElementById("multiple_loader").style = "display:none"
 
-        borderArray = document.getElementsByClassName("multiple_border");
-        for(i=0; i<borderArray.length; i++) {
-            borderArray[i].addEventListener("click",choose);
-        }
+        // Add the button for the multiple result
+        const buttons = document.querySelectorAll('.multiple_border');
+        buttons.forEach(function(currentBtn){
+            currentBtn.addEventListener('click', function() {
+                choose(currentBtn.id);
+            });
+        });
         
     }).catch(error => {
         document.getElementById("start").value = null;
@@ -186,9 +189,11 @@ async function getMultipleInfo(start, end) {
             }
         }
 
+        date.classList.add("multiple_date");
         img.classList.add("multiple_image");
         border.classList.add("multiple_border");
 
+        border.id = dataObject[i].date;
         date.innerHTML = dataObject[i].date;
         img.src = dataObject[i].url;
 
@@ -197,7 +202,6 @@ async function getMultipleInfo(start, end) {
         li.appendChild(border);
         list.appendChild(li);
     }
-
     ul.appendChild(list);
 }
 
@@ -215,8 +219,8 @@ function deleteList() {
     }
 }
 
-function choose() {
-    console.log("Choosed:");
+function choose(x) {
+    show(x);
 }
 
 
