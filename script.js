@@ -77,6 +77,7 @@ function splitTag(id){
 
 // Third task
 function search1(){
+    deleteList();
     const day = document.getElementById("specific").value;
     show(day);
 }
@@ -135,6 +136,7 @@ async function getSpecificInfo(day) {
 }
 
 function search2(){
+    document.getElementById("specific_infos").style = "display: none";
     deleteList();
 
     const start_date = document.getElementById("start").value;
