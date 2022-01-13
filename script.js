@@ -183,6 +183,9 @@ async function getMultipleInfo(start, end) {
     for (let i = 0; i < dataObject.length; i++) {
         let li = document.createElement('div');
         let border = document.createElement('div');
+        let up = document.createElement('i');
+        let down = document.createElement('i');
+
         let date = document.createElement('h3'); 
         
         let img = document.createElement('img');
@@ -195,17 +198,25 @@ async function getMultipleInfo(start, end) {
             }
         }
 
+        up.classList.add("fa");
+        up.classList.add("fa-thumbs-up");
+        down.classList.add("fa");
+        down.classList.add("fa-thumbs-down");
         date.classList.add("multiple_date");
         img.classList.add("multiple_image");
         border.classList.add("multiple_border");
 
         border.id = dataObject[i].date;
+        up.style= "margin-right: 80px; font-size:150%";
+        down.style= "font-size:150%";
         date.innerHTML = dataObject[i].date;
         img.src = dataObject[i].url;
 
         border.appendChild(date);
         border.appendChild(img);
         li.appendChild(border);
+        li.appendChild(up);
+        li.appendChild(down);
         list.appendChild(li);
     }
     ul.appendChild(list);
