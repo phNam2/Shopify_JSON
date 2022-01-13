@@ -134,12 +134,24 @@ async function getSpecificInfo(day) {
     document.getElementById('specific_description').innerHTML = dataObject.explanation;
 }
 
+function search2(){
+    const start_date = document.getElementById("start").value;
+    const end_date = document.getElementById("end").value;
+    getMultipleInfo(start_date, end_date).then(response => {
+        console.log('yay');
+        
+        
+    }).catch(error => {
+        
+        console.log('error!');
+    });
+}
   
-async function getMultipleInfo() {
-    const response = await fetch('https://api.nasa.gov/planetary/apod?api_key=DLM2BzUBSBJylwzHIrmD2zugoFaHcQAPdymRrakb&date=2017-07-08&end_date=2017-07-10');
+async function getMultipleInfo(start, end) {
+    const response = await fetch('https://api.nasa.gov/planetary/apod?api_key=DLM2BzUBSBJylwzHIrmD2zugoFaHcQAPdymRrakb&start_date='+start+'&end_date='+end);
     const datas = await response.text();
     console.log(datas);
-    const ul = document.getElementById('multiple');
+    const ul = document.getElementById('multiple_list');
     const list = document.createDocumentFragment();
 
     const dataObject = JSON.parse(datas);
@@ -147,16 +159,13 @@ async function getMultipleInfo() {
 
     for (let i = 0; i < dataObject.length; i++) {
         let li = document.createElement('li');
-        let name = document.createElement('h2');
+        let date = document.createElement('h3'); 
         let img = document.createElement('img');
-        let des = document.createElement('h4');
 
-        name.innerHTML = dataObject[i].title;
+        date.innerHTML = dataObject[i].date;
         img.src = dataObject[i].url;
-        des.innerHTML = dataObject[i].explanation;
-        li.appendChild(name);
+        li.appendChild(date);
         li.appendChild(img);
-        li.appendChild(des);
         list.appendChild(li);
     }
 
