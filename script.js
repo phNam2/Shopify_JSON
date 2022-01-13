@@ -25,10 +25,11 @@ async function getCurrentInfo() {
     }
 
     document.getElementById('current_image').src = dataObject.url;
+    x = document.getElementById('current_image');
     urlArray = dataObject.url.split("/");
     for (i = 0; i < urlArray.length; i++){
         if (urlArray[i] == "www.youtube.com") {
-            toVideo(dataObject);
+            toVideo(dataObject, x);
             stop;
         }
     } 
@@ -39,10 +40,11 @@ async function getCurrentInfo() {
 }
 
 // Add video link instead of an image
-function toVideo(dataObject) {
-    document.getElementById("current_image").style = "display: none;";
-    document.getElementById("current_video").style = "display: block;";
-    document.getElementById('current_video').src = dataObject.url;
+function toVideo(dataObject, x) {
+    tag = splitTag(x.id);
+    x.style = "display: none;";
+    document.getElementById(tag+"_video").style = "display: block;";
+    document.getElementById(tag+'_video').src = dataObject.url;
 }
 
 // Second task
@@ -52,7 +54,7 @@ function like(x) {
         x.classList.remove("thumbs_up");
     } else {
         x.classList.add("thumbs_up");
-        tagging = splitLikeDislikeButton(x.id);
+        tagging = splitTag(x.id);
         document.getElementById(tagging+'_dislike').classList.remove("thumbs_down");
     }
 }
@@ -63,13 +65,13 @@ function dislike(x) {
         x.classList.remove("thumbs_down");
     } else {
         x.classList.add("thumbs_down");
-        tagging = splitLikeDislikeButton(x.id);
+        tagging = splitTag(x.id);
         document.getElementById(tagging+'_like').classList.remove("thumbs_up");
     }
    
 }
 
-function splitLikeDislikeButton(id){
+function splitTag(id){
     tagging = id.split("_");
     return tagging[0];
 }
@@ -78,9 +80,12 @@ function splitLikeDislikeButton(id){
 function search1() {
     const day = document.getElementById("specific").value;
     document.getElementById("specific_infos").style = "display: block";
+    document.getElementById("specific_image").style = "display: block";
+    document.getElementById("specific_video").style = "display: none";
     getSpecificInfo(day).then(response => {
         console.log('yay');
         
+        document.getElementById("specific").value = null;
         document.getElementById("specific_loader").style = "display:none";
         document.getElementById("specific_info").style = "display: block";
     }).catch(error => {
@@ -106,10 +111,11 @@ async function getSpecificInfo(day) {
     }
 
     document.getElementById('specific_image').src = dataObject.url;
+    x = document.getElementById('specific_image');
     urlArray = dataObject.url.split("/");
     for (i = 0; i < urlArray.length; i++){
         if (urlArray[i] == "www.youtube.com") {
-            toVideo(dataObject);
+            toVideo(dataObject, x);
             stop;
         }
     } 
