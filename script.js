@@ -204,6 +204,8 @@ function currentDate(){
     } 
     const theDate = dateArray[3]+"-"+month+"-"+dateArray[2];
     document.getElementById("specific").max = theDate;
+    document.getElementById("start").max = theDate;
+    document.getElementById("end").max = theDate;
 }
 
 window.onload = currentDate;
