@@ -148,10 +148,11 @@ main{
 #main2{
     height: 100%;
     display: grid;
-    grid-template-rows: 10% 20% 70%;
+    grid-template-rows: 10% 20% 20% 50%;
     grid-template-columns: 45% 10% 45%;
     grid-template-areas:"box7 box7 box7"
                         "box8 . box9"
+                        "box11 box11 box11"
                         "box10 box10 box10";
 }
 
@@ -174,6 +175,11 @@ main{
 .box10{
     /* background-color: red; */
     grid-area: box10;
+}
+
+.box11{
+    background-color: red;
+    grid-area: box11;
 }
 
 .dateBox{
