@@ -147,6 +147,11 @@ function search2(){
         document.getElementById("start").value = null;
         document.getElementById("end").value = null;
         document.getElementById("multiple_loader").style = "display:none";
+
+        borderArray = document.getElementsByClassName("multiple_border");
+        for(i=0; i<borderArray.length; i++) {
+            borderArray[i].addEventListener("click",choose);
+        }
         
     }).catch(error => {
         document.getElementById("start").value = null;
@@ -208,6 +213,10 @@ function deleteList() {
     while (listElements.firstChild) {
         listElements.removeChild(listElements.lastChild);
     }
+}
+
+function choose() {
+    console.log("Choosed:");
 }
 
 

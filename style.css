@@ -152,8 +152,8 @@ main{
     grid-template-columns: 45% 10% 45%;
     grid-template-areas:"box7 box7 box7"
                         "box8 . box9"
-                        "box11 box11 box11"
-                        "box10 box10 box10";
+                        "box10 box10 box10"
+                        "box11 box11 box11";
 }
 
 .box7{
@@ -219,6 +219,11 @@ main{
     text-align: center;
     background-color: rgb(238, 238, 103);
     border: 5px solid black; 
+}
+
+.multiple_border:hover{
+    color: white;
+    background-color: rgb(218, 121, 11);
 }
 
 .multiple_image{
