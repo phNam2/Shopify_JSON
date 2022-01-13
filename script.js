@@ -165,7 +165,16 @@ async function getMultipleInfo(start, end) {
         let li = document.createElement('div');
         let border = document.createElement('div');
         let date = document.createElement('h3'); 
+        
         let img = document.createElement('img');
+        urlArray = dataObject[i].url.split("/");
+        for (j = 0; j < urlArray.length; j++){
+            // console.log(dataObject[i].url);
+            if (urlArray[j] == "www.youtube.com") {
+                img = document.createElement('iframe');
+                stop;
+            }
+        }
 
         img.classList.add("multiple_image");
         border.classList.add("multiple_border");
