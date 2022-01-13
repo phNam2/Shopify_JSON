@@ -174,6 +174,11 @@ async function getMultipleInfo(start, end) {
     const dataObject = JSON.parse(datas);
     console.log(dataObject);
 
+    if (dataObject.code == 400) {
+        x=document.getElementById("error2");
+        x.style = "display:block";
+    }
+
     for (let i = 0; i < dataObject.length; i++) {
         let li = document.createElement('div');
         let border = document.createElement('div');
