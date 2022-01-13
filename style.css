@@ -224,6 +224,7 @@ main{
     text-align: center;
     background-color: rgb(238, 238, 103);
     border: 5px solid black; 
+    transition-duration: 0.4s;
 }
 
 .multiple_border:hover{
