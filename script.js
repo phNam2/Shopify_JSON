@@ -137,6 +137,7 @@ async function getSpecificInfo(day) {
 
 function search2(){
     document.getElementById("specific_infos").style = "display: none";
+    document.getElementById("multiple_loader").style = "display:block";
     deleteList();
 
     const start_date = document.getElementById("start").value;
@@ -145,11 +146,13 @@ function search2(){
         console.log('yay');
         document.getElementById("start").value = null;
         document.getElementById("end").value = null;
+        document.getElementById("multiple_loader").style = "display:none";
         
     }).catch(error => {
         document.getElementById("start").value = null;
         document.getElementById("end").value = null;
         console.log('error!');
+        document.getElementById("multiple_loader").style = "display:none";
     });
 }
   
