@@ -5,7 +5,6 @@ getCurrentInfo().then(response => {
     document.getElementById("info").style = "display: block";
 }).catch(error => {
     console.log('error!');
-    console.error(error);
 });
   
 async function getCurrentInfo() {
@@ -77,20 +76,30 @@ function splitTag(id){
 }
 
 // Third task
-function search1() {
+function search1(){
     const day = document.getElementById("specific").value;
+    show(day);
+}
+
+function show(day) {
     document.getElementById("specific_infos").style = "display: block";
+    document.getElementById("specific_info").style = "display: none";
+    document.getElementById("specific_loader").style = "display:block";
     document.getElementById("specific_image").style = "display: block";
     document.getElementById("specific_video").style = "display: none";
     getSpecificInfo(day).then(response => {
         console.log('yay');
         
+        document.getElementById("error").style = "display:none";
         document.getElementById("specific").value = null;
         document.getElementById("specific_loader").style = "display:none";
         document.getElementById("specific_info").style = "display: block";
     }).catch(error => {
-    console.log('error!');
-    console.error(error);
+        document.getElementById("specific").value = null;
+        document.getElementById("specific_loader").style = "display:none";
+        document.getElementById("specific_info").style = "display:none";
+        document.getElementById("error").style = "display:block";
+        console.log('error!');
     });
 }
 
