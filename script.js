@@ -159,3 +159,20 @@ function test(){
     // console.log(today);
     console.log(document.getElementById("specific").value);
 }
+
+
+// Function return the current date
+function currentDate(){
+    var today = new Date();
+    
+    var month = new String();
+    dateArray = today.toDateString().split(" ");
+    // console.log(dateArray[3]);
+    if(dateArray[1] == "Jan") {
+        month = "01";
+    }
+    const theDate = dateArray[3]+"-"+month+"-"+dateArray[2];
+    document.getElementById("specific").max = theDate;
+}
+
+window.onload = currentDate;
