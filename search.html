@@ -15,7 +15,7 @@
             <div id="exact_date" class="dateBox">
                 <h2 style="font-size: 3vh;">Choose a specific date</h2>
                 <label>Enter:</label>
-                <input type="date" id="specific" min="2015-01-01">
+                <input type="date" id="specific" min="1995-06-20">
 
                 <button onclick="search1()">
                     <span class="text"> Submit</span>
@@ -45,6 +45,9 @@
                     
                         <i onclick="dislike(this)" id="specific_dislike" class="fa fa-thumbs-down"></i>
                     </div>
+                </div>
+                <div style="text-align: center;">
+                    <h1 id="error" style="display: none; font-size: 4vh">Archive only from June 20th 1995 to today</h1>
                 </div>
             </div>
             <div id="multiple" style="display:none">
