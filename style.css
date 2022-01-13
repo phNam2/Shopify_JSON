@@ -204,7 +204,24 @@ main{
 #multiple{
     background: white; 
     /* font-size: 20px;  */
-    padding: 10px; 
+    /* padding: 10px;  */
     border: 10px double black; 
+    /* margin: 10px; */
+}
+
+#multiple_list{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.multiple_border{
     margin: 10px;
+    text-align: center;
+    background-color: rgb(238, 238, 103);
+    border: 5px solid black; 
+}
+
+.multiple_image{
+    width: 200px;
+    height: 200px;
 }

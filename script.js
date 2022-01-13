@@ -162,14 +162,20 @@ async function getMultipleInfo(start, end) {
     console.log(dataObject);
 
     for (let i = 0; i < dataObject.length; i++) {
-        let li = document.createElement('li');
+        let li = document.createElement('div');
+        let border = document.createElement('div');
         let date = document.createElement('h3'); 
         let img = document.createElement('img');
 
+        img.classList.add("multiple_image");
+        border.classList.add("multiple_border");
+
         date.innerHTML = dataObject[i].date;
         img.src = dataObject[i].url;
-        li.appendChild(date);
-        li.appendChild(img);
+
+        border.appendChild(date);
+        border.appendChild(img);
+        li.appendChild(border);
         list.appendChild(li);
     }
 
