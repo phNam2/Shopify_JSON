@@ -4,6 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <title>Legacy search</title>
 </head>
 <body>
@@ -69,6 +70,18 @@
                     <div id="multiple_list"></div>
                     <h1 id="error2" style="display: none; font-size: 4vh;  text-transform: uppercase"></h1>
                 </div>
+            </div>
+        </div>
+
+        <div id="modal01" class="w3-modal" onclick="this.style.display='none'">
+            <span class="w3-button w3-hover-red w3-xlarge w3-display-topright">&times;</span>
+            <div class="w3-modal-content w3-animate-zoom infos" style="background-color: black; padding: 10px;">
+                <h1 id="modal_title" class="title"></h1>
+                <p id="modal_date" class="date"></p>
+                <p id="modal_author" class="author"></p>
+                <img id="modal_image" style="width:100%">
+                <iframe src="" id="modal_video" class="video" style="display: none;"></iframe>
+                <p id="modal_description" class="description"></p>
             </div>
         </div>
         

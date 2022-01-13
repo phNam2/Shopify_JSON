@@ -225,8 +225,44 @@ function deleteList() {
     }
 }
 
-function choose(x) {
-    show(x);
+function choose(day) {
+    // document.getElementById("img01").src = element.src;
+    document.getElementById("modal01").style.display = "block";
+    document.getElementById("modal_image").style.display = "block";
+    document.getElementById("modal_video").style.display = "none";
+    giveModalInfo(day).then(response => {
+        console.log('yay');
+    }).catch(error => {
+        console.log('error!');
+    });
+}
+
+async function giveModalInfo(day) {
+    const response = await fetch('https://api.nasa.gov/planetary/apod?api_key=DLM2BzUBSBJylwzHIrmD2zugoFaHcQAPdymRrakb&date='+day);
+    const datas = await response.text();
+    console.log(datas);
+
+    const dataObject = JSON.parse(datas);
+    console.log(dataObject);
+
+    document.getElementById('modal_title').innerHTML = dataObject.title;
+    document.getElementById('modal_date').innerHTML = dataObject.date;
+    if (dataObject.copyright == null) {
+        document.getElementById('modal_author').innerHTML = "Anonymous";
+    } else {
+        document.getElementById('modal_author').innerHTML = dataObject.copyright;
+    }
+
+    document.getElementById('modal_image').src = dataObject.url;
+    x = document.getElementById('modal_image');
+    urlArray = dataObject.url.split("/");
+    for (i = 0; i < urlArray.length; i++){
+        if (urlArray[i] == "www.youtube.com") {
+            toVideo(dataObject, x);
+            stop;
+        }
+    } 
+    document.getElementById('modal_description').innerHTML = dataObject.explanation;
 }
 
 
