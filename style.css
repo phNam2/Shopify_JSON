@@ -200,3 +200,11 @@ main{
     background-color: white;
     border: 5px solid rgb(109, 106, 106);
 }
+
+#multiple{
+    background: white; 
+    /* font-size: 20px;  */
+    padding: 10px; 
+    border: 10px double black; 
+    margin: 10px;
+}
