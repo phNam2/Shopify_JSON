@@ -203,6 +203,7 @@ async function getMultipleInfo(start, end) {
         let li = document.createElement('div');
         let border = document.createElement('div');
 
+        let buttons = document.createElement('div');
         let divup = document.createElement('div');
         let up = document.createElement('i');
         let divdown = document.createElement('div');
@@ -231,6 +232,7 @@ async function getMultipleInfo(start, end) {
         border.classList.add("multiple_border");
 
         border.id = dataObject[i].date;
+        buttons.style = "display: flex; justify-content: center; margin-bottom: 15px";
         up.style= "margin-right: 80px; font-size:150%";
         down.style= "font-size:150%";
         date.innerHTML = dataObject[i].date;
@@ -240,11 +242,12 @@ async function getMultipleInfo(start, end) {
 
         divup.appendChild(up);
         divdown.appendChild(down);
+        buttons.appendChild(divup);
+        buttons.appendChild(divdown);
         border.appendChild(date);
         border.appendChild(img);
         li.appendChild(border);
-        li.appendChild(divup);
-        li.appendChild(divdown);
+        li.appendChild(buttons);
         list.appendChild(li);
     }
     ul.appendChild(list);
