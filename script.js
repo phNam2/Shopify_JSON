@@ -155,6 +155,25 @@ function search2(){
                 choose(currentBtn.id);
             });
         });
+
+        const multiple_up = document.querySelectorAll('.modal_up');
+        // console.log(multiple_up);
+        multiple_up.forEach(function(currentBtn){
+            // console.log(currentBtn);
+            currentBtn.addEventListener('click', function() {
+                like(currentBtn);
+                // console.log('lommmml');
+            });
+        });
+
+        const multiple_down = document.querySelectorAll('.modal_down');
+        // console.log(multiple_down);
+        multiple_down.forEach(function(currentBtn){
+            // console.log(currentBtn);
+            currentBtn.addEventListener('click', function() {
+                dislike(currentBtn);
+            });
+        });
         
     }).catch(error => {
         document.getElementById("start").value = null;
@@ -183,7 +202,10 @@ async function getMultipleInfo(start, end) {
     for (let i = 0; i < dataObject.length; i++) {
         let li = document.createElement('div');
         let border = document.createElement('div');
+
+        let divup = document.createElement('div');
         let up = document.createElement('i');
+        let divdown = document.createElement('div');
         let down = document.createElement('i');
 
         let date = document.createElement('h3'); 
@@ -200,8 +222,10 @@ async function getMultipleInfo(start, end) {
 
         up.classList.add("fa");
         up.classList.add("fa-thumbs-up");
+        divup.classList.add("modal_up");
         down.classList.add("fa");
         down.classList.add("fa-thumbs-down");
+        divdown.classList.add("modal_down");
         date.classList.add("multiple_date");
         img.classList.add("multiple_image");
         border.classList.add("multiple_border");
@@ -211,12 +235,16 @@ async function getMultipleInfo(start, end) {
         down.style= "font-size:150%";
         date.innerHTML = dataObject[i].date;
         img.src = dataObject[i].url;
+        divup.id = dataObject[i].date+"_like";
+        divdown.id = dataObject[i].date+"_dislike";
 
+        divup.appendChild(up);
+        divdown.appendChild(down);
         border.appendChild(date);
         border.appendChild(img);
         li.appendChild(border);
-        li.appendChild(up);
-        li.appendChild(down);
+        li.appendChild(divup);
+        li.appendChild(divdown);
         list.appendChild(li);
     }
     ul.appendChild(list);
