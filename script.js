@@ -25,13 +25,9 @@ async function getCurrentInfo() {
 
     document.getElementById('current_image').src = dataObject.url;
     x = document.getElementById('current_image');
-    urlArray = dataObject.url.split("/");
-    for (i = 0; i < urlArray.length; i++){
-        if (urlArray[i] == "www.youtube.com") {
-            toVideo(dataObject, x);
-            stop;
-        }
-    } 
+    if (dataObject.media_type=="video") {
+        toVideo(dataObject, x);
+    }
 
     // document.getElementById("current_image").addEventListener("error", toVideo(dataObject));
 
@@ -123,13 +119,9 @@ async function getSpecificInfo(day) {
 
     document.getElementById('specific_image').src = dataObject.url;
     x = document.getElementById('specific_image');
-    urlArray = dataObject.url.split("/");
-    for (i = 0; i < urlArray.length; i++){
-        if (urlArray[i] == "www.youtube.com") {
-            toVideo(dataObject, x);
-            stop;
-        }
-    } 
+    if (dataObject.media_type=="video") {
+        toVideo(dataObject, x);
+    }
 
     // document.getElementById("current_image").addEventListener("error", toVideo(dataObject));
 
@@ -214,13 +206,8 @@ async function getMultipleInfo(start, end) {
         let date = document.createElement('h3'); 
         
         let img = document.createElement('img');
-        urlArray = dataObject[i].url.split("/");
-        for (j = 0; j < urlArray.length; j++){
-            // console.log(dataObject[i].url);
-            if (urlArray[j] == "www.youtube.com") {
-                img = document.createElement('iframe');
-                stop;
-            }
+        if (dataObject[i].media_type=="video") {
+            img = document.createElement('iframe');
         }
 
         up.classList.add("fa");
@@ -299,13 +286,9 @@ async function giveModalInfo(day) {
 
     document.getElementById('modal_image').src = dataObject.url;
     x = document.getElementById('modal_image');
-    urlArray = dataObject.url.split("/");
-    for (i = 0; i < urlArray.length; i++){
-        if (urlArray[i] == "www.youtube.com") {
-            toVideo(dataObject, x);
-            stop;
-        }
-    } 
+    if (dataObject.media_type=="video") {
+        toVideo(dataObject, x);
+    }
     document.getElementById('modal_description').innerHTML = dataObject.explanation;
 }
 
