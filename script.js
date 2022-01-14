@@ -95,6 +95,7 @@ function show(day) {
     document.getElementById("specific_loader").style = "display:block";
     document.getElementById("specific_image").style = "display: block";
     document.getElementById("specific_video").style = "display: none";
+    document.getElementById("specific_image_error").style = "display: none";
     getSpecificInfo(day).then(response => {
         console.log('yay');
         
