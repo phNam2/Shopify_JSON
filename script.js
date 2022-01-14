@@ -279,7 +279,6 @@ function choose(day) {
     // document.getElementById("img01").src = element.src;
     document.getElementById("modal01").style.display = "block";
     document.getElementById("modal_image").style.display = "block";
-    document.getElementById("modal_image").style.width = "100%";
     document.getElementById("modal_video").style.display = "none";
     document.getElementById("modal_image_error").style.display = "none";
     giveModalInfo(day).then(response => {

@@ -242,3 +242,7 @@ main{
     width: 200px;
     height: 200px;
 }
+
+#modal_image{
+    width:100%;
+}
