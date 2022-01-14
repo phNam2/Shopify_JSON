@@ -158,13 +158,14 @@ main{
 /* Search html layout */
 #main2{
     height: 100%;
-    display: grid;
-    grid-template-rows: 7% 8% 20% 55%;
+    display: flex;
+    flex-direction: column;
+    /* grid-template-rows: 7% 8% 20% 55%;
     grid-template-columns: 45% 10% 45%;
     grid-template-areas:"box13 box13 box13"
                         "box7 box7 box7"
                         "box8 . box9"
-                        "box12 box12 box12";
+                        "box12 box12 box12"; */
 }
 
 .box7{
@@ -173,14 +174,8 @@ main{
     grid-area: box7;
 }
 
-.box8{
-    /* margin: 10px; */
-    grid-area: box8;
-}
-
-.box9{
-    /* margin: 10px; */
-    grid-area: box9;
+.boxSearch{
+    width: 50%;
 }
 
 .box10{
@@ -202,6 +197,11 @@ main{
     grid-area: box13;
 }
 
+.box14{
+    display: flex;
+    margin-bottom: 10px;
+}
+
 .dateBox{
     width: 80%;
     padding: 20px;
@@ -209,6 +209,10 @@ main{
     margin-right: auto;
     text-align: center;
     border-radius: 30px;
+}
+
+input{
+    font-size: 40%;
 }
 
 #exact_date{
