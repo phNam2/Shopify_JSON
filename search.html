@@ -76,14 +76,20 @@
             </div>
         </div>
 
-        <div id="modal01" class="w3-modal" onclick="this.style.display='none'; document.getElementById('modal_video').src=null">
+        <div id="modal01" class="w3-modal" onclick="this.style.display='none'; 
+                                                    document.getElementById('modal_video').src=null;">
             <span class="w3-button w3-hover-red w3-xlarge w3-display-topright">&times;</span>
             <div class="w3-modal-content w3-animate-zoom infos" style="background-color: black; padding: 10px;">
                 <h1 id="modal_title" class="title"></h1>
                 <p id="modal_date" class="date"></p>
                 <p id="modal_author" class="author"></p>
+
                 <img id="modal_image" style="width:100%">
                 <iframe src="" id="modal_video" class="video" style="display: none;"></iframe>
+                <p id="modal_image_error" class="link" style="display: none;">Image cannot be displayed here.
+                    <a id="modal_link" href="" target="_blank">Link to the source.</a>
+                </p>
+
                 <p id="modal_description" class="description"></p>
             </div>
         </div>

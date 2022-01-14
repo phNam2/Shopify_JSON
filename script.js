@@ -217,7 +217,17 @@ async function getMultipleInfo(start, end) {
         
         let img = document.createElement('img');
         if (dataObject[i].media_type=="video") {
-            img = document.createElement('iframe');
+
+            let linkArray = dataObject[i].url.split("/");
+            if (linkArray[2]=="apod.nasa.gov"){
+                img = document.createElement('div');
+                img.innerHTML = "Image cannot be displayed";
+            } else {
+                img = document.createElement('iframe');
+                img.src = dataObject[i].url;
+            }
+        } else {
+            img.src = dataObject[i].url;
         }
 
         up.classList.add("fa");
@@ -235,7 +245,6 @@ async function getMultipleInfo(start, end) {
         up.style= "margin-right: 80px; font-size:150%";
         down.style= "font-size:150%";
         date.innerHTML = dataObject[i].date;
-        img.src = dataObject[i].url;
         divup.id = dataObject[i].date+"_like";
         divdown.id = dataObject[i].date+"_dislike";
 
@@ -270,7 +279,9 @@ function choose(day) {
     // document.getElementById("img01").src = element.src;
     document.getElementById("modal01").style.display = "block";
     document.getElementById("modal_image").style.display = "block";
+    document.getElementById("modal_image").style.width = "100%";
     document.getElementById("modal_video").style.display = "none";
+    document.getElementById("modal_image_error").style.display = "none";
     giveModalInfo(day).then(response => {
         console.log('yay');
     }).catch(error => {
