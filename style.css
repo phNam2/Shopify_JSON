@@ -221,11 +221,12 @@ main{
 }
 
 .multiple_border{
-    margin: 10px;
+    margin: 15px;
     text-align: center;
     background-color: rgb(238, 238, 103);
     border: 5px solid black; 
     transition-duration: 0.4s;
+    cursor: pointer;
 }
 
 .multiple_border:hover{
