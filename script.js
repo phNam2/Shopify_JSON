@@ -84,6 +84,7 @@ function search1(){
     deleteList();
     document.getElementById("specific_video").src = null;
     const day = document.getElementById("specific").value;
+    document.getElementById("error").style = "display:none";
     document.getElementById("error2").style = "display: none";
     document.getElementById("multiple").style = "display:none";
     show(day);
@@ -99,10 +100,10 @@ function show(day) {
     getSpecificInfo(day).then(response => {
         console.log('yay');
         
-        document.getElementById("error").style = "display:none";
+        // document.getElementById("error").style = "display:none";
         document.getElementById("specific").value = null;
         document.getElementById("specific_loader").style = "display:none";
-        document.getElementById("specific_info").style = "display: block";
+        // document.getElementById("specific_info").style = "display: block";
     }).catch(error => {
         document.getElementById("specific").value = null;
         document.getElementById("specific_loader").style = "display:none";
@@ -118,7 +119,7 @@ async function getSpecificInfo(day) {
     console.log(datas);
 
     const dataObject = JSON.parse(datas);
-    console.log(dataObject);
+    console.log(dataObject.code);
 
     document.getElementById('specific_title').innerHTML = dataObject.title;
     document.getElementById('specific_date').innerHTML = dataObject.date;
@@ -137,6 +138,12 @@ async function getSpecificInfo(day) {
     // document.getElementById("current_image").addEventListener("error", toVideo(dataObject));
 
     document.getElementById('specific_description').innerHTML = dataObject.explanation;
+    document.getElementById("specific_info").style = "display: block";
+    if (dataObject.code == 400) {
+        document.getElementById("error").style = "display:block;";
+        document.getElementById("error").innerHTML = dataObject.msg;
+        document.getElementById("specific_info").style = "display: none";
+    }
 }
 
 function search2(){
