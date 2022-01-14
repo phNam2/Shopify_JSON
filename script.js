@@ -74,6 +74,7 @@ function splitTag(id){
 // Third task
 function search1(){
     deleteList();
+    document.getElementById("specific_video").src = null;
     const day = document.getElementById("specific").value;
     document.getElementById("error2").style = "display: none";
     document.getElementById("multiple").style = "display:none";
@@ -130,6 +131,7 @@ async function getSpecificInfo(day) {
 }
 
 function search2(){
+    document.getElementById("specific_video").src = null;
     document.getElementById("specific_infos").style = "display: none";
     document.getElementById("multiple").style = "display:block";
     document.getElementById("multiple_loader").style = "display:block";
