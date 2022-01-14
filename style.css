@@ -124,7 +124,7 @@ main{
 }
 
 
-#next_page{
+.pageButton{
     border: none;
     font-family: cursive;
     background-color: rgb(223, 195, 39);
@@ -138,23 +138,31 @@ main{
     cursor: pointer;
     border-radius: 20px;
 
-    float: right;
+    
 }
 
-#next_page:hover {
+.pageButton:hover {
     background-color: rgb(177, 150, 0);
     color: white;
 }
 
+#next_page{
+    float: right;
+}
+
+#back{
+    float: left;
+}
 
 
 /* Search html layout */
 #main2{
     height: 100%;
     display: grid;
-    grid-template-rows: 10% 20% 20% 50%;
+    grid-template-rows: 7% 8% 20% 55%;
     grid-template-columns: 45% 10% 45%;
-    grid-template-areas:"box7 box7 box7"
+    grid-template-areas:"box13 box13 box13"
+                        "box7 box7 box7"
                         "box8 . box9"
                         "box12 box12 box12";
 }
@@ -188,6 +196,10 @@ main{
     grid-area: box12;
     display: flex;
     flex-direction: column;
+}
+
+.box13{
+    grid-area: box13;
 }
 
 .dateBox{
