@@ -79,6 +79,7 @@ function splitTag(id){
 function search1(){
     deleteList();
     const day = document.getElementById("specific").value;
+    document.getElementById("error2").style = "display: none";
     show(day);
 }
 
@@ -138,6 +139,7 @@ async function getSpecificInfo(day) {
 function search2(){
     document.getElementById("specific_infos").style = "display: none";
     document.getElementById("multiple_loader").style = "display:block";
+    document.getElementById("error2").style = "display: none";
     deleteList();
 
     const start_date = document.getElementById("start").value;
