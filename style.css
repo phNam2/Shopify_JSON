@@ -1,5 +1,7 @@
 body{
-    background-image: url(./space.gif);
+    background-image: url(./space2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     font-family: Arial, Helvetica, sans-serif;
 }
 
