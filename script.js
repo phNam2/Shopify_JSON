@@ -163,20 +163,17 @@ function search2(){
             });
         });
 
+        // Like button functionality
         const multiple_up = document.querySelectorAll('.modal_up');
-        // console.log(multiple_up);
         multiple_up.forEach(function(currentBtn){
-            // console.log(currentBtn);
             currentBtn.addEventListener('click', function() {
                 like(currentBtn);
-                // console.log('lommmml');
             });
         });
 
+        // Dislike button functionality
         const multiple_down = document.querySelectorAll('.modal_down');
-        // console.log(multiple_down);
         multiple_down.forEach(function(currentBtn){
-            // console.log(currentBtn);
             currentBtn.addEventListener('click', function() {
                 dislike(currentBtn);
             });
