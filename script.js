@@ -38,8 +38,16 @@ async function getCurrentInfo() {
 function toVideo(dataObject, x) {
     tag = splitTag(x.id);
     x.style = "display: none;";
-    document.getElementById(tag+"_video").style = "display: block;";
-    document.getElementById(tag+'_video').src = dataObject.url;
+    let linkArray = dataObject.url.split("/");
+    console.log(linkArray[2]);
+
+    if (linkArray[2]=="apod.nasa.gov"){
+        document.getElementById(tag+"_image_error").style = "display: block;";
+        document.getElementById(tag+'_link').href = dataObject.url;
+    } else {
+        document.getElementById(tag+"_video").style = "display: block;";
+        document.getElementById(tag+'_video').src = dataObject.url;
+    }
 }
 
 // Second task

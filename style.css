@@ -103,6 +103,10 @@ main{
     font-size: 120%;
 }
 
+.link{
+    text-align: center;
+}
+
 .description{
     text-align: justify;
 }
