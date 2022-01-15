@@ -323,7 +323,6 @@ async function giveModalInfo(day) {
 // Function return the current date
 function currentDate(){
     var today = new Date();
-<<<<<<< HEAD
     var month = new String();
     dateArray = today.toDateString().split(" ");
 
@@ -353,9 +352,6 @@ function currentDate(){
         month = "12";
     } 
     const theDate = dateArray[3]+"-"+month+"-"+dateArray[2];
-=======
-    var theDate = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
->>>>>>> 049ad0c92fb3b4c1c6f54e62e60da4519c00e1ba
     document.getElementById("specific").max = theDate;
     document.getElementById("start").max = theDate;
     document.getElementById("end").max = theDate;
