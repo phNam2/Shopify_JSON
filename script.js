@@ -323,10 +323,9 @@ async function giveModalInfo(day) {
 // Function return the current date
 function currentDate(){
     var today = new Date();
-    
     var month = new String();
     dateArray = today.toDateString().split(" ");
-    // console.log(dateArray[3]);
+
     if(dateArray[1] == "Jan") {
         month = "01";
     } else if(dateArray[1] == "Feb") {
