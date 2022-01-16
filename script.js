@@ -249,8 +249,9 @@ async function getMultipleInfo(start, end) {
 
         border.id = dataObject[i].date;
         buttons.style = "display: flex; justify-content: center; margin-bottom: 15px";
-        up.style= "margin-right: 80px; font-size:150%";
-        down.style= "font-size:150%";
+        up.style= "font-size:150%; cursor: pointer";
+        down.style= "font-size:150%; cursor: pointer";
+        divup.style="margin-right: 80px";
         date.innerHTML = dataObject[i].date;
         divup.id = dataObject[i].date+"_like";
         divdown.id = dataObject[i].date+"_dislike";
